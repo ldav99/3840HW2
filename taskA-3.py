@@ -8,7 +8,7 @@ cv2.imshow("Original Image", originalImage)
 cv2.waitKey(3000)
 
 #Sobel Edge Detection
-#TODO Ask if we need to blue the image first before doing edge detection.
+#TODO Ask if we need to blur the image first before doing edge detection.
 #cv2.sobel(src, ddepth, dx, dy)
 # src - The source image
 # ddepth - Precision of the output image

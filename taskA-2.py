@@ -12,7 +12,6 @@ import numpy as np
 # borderType - pixel extrapolation method
 
 originalImage = cv2.imread("Images/image1.png")
-dstImage = 0
 
 #Move image left 1 pixel
 leftFilter = np.zeros((3,3))
