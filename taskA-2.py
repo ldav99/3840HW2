@@ -42,7 +42,7 @@ rightFilter[3][0] = 1
 
 rightImage = cv2.filter2D(src=originalImage, ddepth=-1, kernel=rightFilter, borderType=cv2.BORDER_CONSTANT)
 
-#TODO ask if this is ok
+
 #for loop to better show the difference between the two images
 for i in range(10):
     cv2.imshow("Moved 3 Pixels Right", rightImage)

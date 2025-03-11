@@ -9,9 +9,9 @@ import cv2
 import numpy as np
 
 # #Load an Image
-# #TODO Ask what the difference is between loading and reading
+image = "Images/image3.jpg"
 # #Read an Image of your choice
-originalImage = cv2.imread("Images/image1.png")
+originalImage = cv2.imread(image)
 
 #Convert the image into grey level image
 grayImage = cv2.cvtColor(originalImage, cv2.COLOR_BGR2GRAY)

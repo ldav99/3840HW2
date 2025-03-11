@@ -8,19 +8,18 @@ import numpy as np
 
 
 #Show image
-originalImage = cv2.imread("Images/image1.png")
+originalImage = cv2.imread("Images/image3.jpg")
 cv2.imshow("Original Image", originalImage)
 cv2.waitKey(3000)
 
 #Sobel Edge Detection
-#TODO Ask if we need to blur the image first before doing edge detection.
 #cv2.sobel(src, ddepth, dx, dy)
 # src - The source image
 # ddepth - Precision of the output image
 # dx - 
 # dy -
 sobelOutput = cv2.Sobel(src=originalImage, ddepth=cv2.CV_64F, dx= 1, dy=1)
-#TODO Ask what our result should look like
+#TODO Ask what our result should look like NO
 cv2.imshow('Sobel Edge Detection', sobelOutput)
 cv2.waitKey(3000)
 
