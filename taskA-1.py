@@ -13,7 +13,7 @@ image = "Images/image3.jpg"
 # #Read an Image of your choice
 originalImage = cv2.imread(image)
 
-#Convert the image into grey level image
+#Convert the image into gray level image
 grayImage = cv2.cvtColor(originalImage, cv2.COLOR_BGR2GRAY)
 
 #Show the original image
