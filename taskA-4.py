@@ -5,7 +5,9 @@
 
 import numpy as np
 import cv2
+#Import pyplot to plot the convoluted array as an image
 from matplotlib import pyplot as plt
+from PIL import Image as im
 
 
 def main():
@@ -33,22 +35,21 @@ def main():
     dyFilter[2][0] = 1
     dyFilter[2][1] = 2
     dyFilter[2][2] = 1
-    print(dyFilter)
 
     #Convert image to grayscale so we only have to worry about one channel
     grayImage = cv2.cvtColor(originalImage, cv2.COLOR_BGR2GRAY)
 
 #Base filter
-    imageFiltering(filter, grayImage)
+    imageFiltering(filter, grayImage, 'Base Filter')
 
 #df/dx filter
-    imageFiltering(dxFilter, grayImage)
+    imageFiltering(dxFilter, grayImage, 'df/dx Filter')
 
 #df/dy filter
-    imageFiltering(dyFilter, grayImage)
+    imageFiltering(dyFilter, grayImage, 'df/dy Filter')
 
 
-def imageFiltering(filter, image):
+def imageFiltering(filter, image, title):
 #Get filter length
     filterLength = len(filter)
 #Get original image and output image height and width
@@ -68,10 +69,10 @@ def imageFiltering(filter, image):
                 pixelGroup = tempImg[y:y+filterLength, x:x+filterLength]
 
 #Take the sum of the pixel group multiplied by the filter and append it to the output 
-            output[y, x] = np.sum(np.dot(filter , pixelGroup))
+            output[y, x] = np.sum(filter * pixelGroup)
             
 #Use Pyplot to take the output array of values and show them as an image
-#TODO Maybe add cmap='gray' to show greyscale. Check numbers in output first.
+    plt.title(title)
     plt.imshow(output, cmap='gray')
     plt.show()
 
