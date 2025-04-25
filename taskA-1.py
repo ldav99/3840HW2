@@ -20,7 +20,7 @@ grayImage = cv2.cvtColor(originalImage, cv2.COLOR_BGR2GRAY)
 cv2.imshow("Original Image", originalImage)
 cv2.waitKey(3000)
 
-#Show the gray image
+#Show the converted gray image
 cv2.imshow("Gray Image", grayImage)
 cv2.waitKey(3000)
 
